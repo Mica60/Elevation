@@ -15,6 +15,4 @@ public class useWrite{
     public void writting(String text){System.out.print("\033[H\033[2J");System.out.flush();for(int dx=0;dx<text.length();dx++){System.out.print(text.charAt(dx));try{Thread.sleep(this.time);}catch(InterruptedException e){Thread.currentThread().interrupt();}}}
     public void writtinginst(String text){System.out.print("\033[H\033[2J");System.out.flush();System.out.print(text);}
     public void usePauseLauncher(){try{Thread.sleep(2000);}catch(InterruptedException e){Thread.currentThread().interrupt();}}
-    public void usePauseCine(){try{Thread.sleep(1000);}catch(InterruptedException e){Thread.currentThread().interrupt();}}
-    
 }
