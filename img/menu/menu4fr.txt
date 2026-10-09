@@ -1,1 +1,6 @@
 fr4
+1. Jouer 
+2. Paramètre
+3. Sauvegarde
+4. Tutoriel 
+5. Quitter 

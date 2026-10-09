@@ -1,1 +1,6 @@
 ang5
+1. Play
+2. Settings
+3. Save
+4. Tutorial
+5. Quit
