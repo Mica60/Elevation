@@ -6,12 +6,12 @@ public class Chargement{
     
     public static void LancementJeux() {
         GestionnaireMusique musique = new GestionnaireMusique("audio/bobine.wav");
-        new RequeteTexte("img/menu/credit.txt",write.ANIM);
-        new RequeteTexte("img/menu/loading1.txt",write.ANIM);
-        new RequeteTexte("img/menu/loading2.txt",write.ANIM);
-        new RequeteTexte("img/menu/loading3.txt",write.ANIM);
-        new RequeteTexte("img/menu/loading4.txt",write.ANIM);
-        new RequeteTexte("img/menu/loading5.txt",write.ANIM);
+        new RequeteTexte("img/menu/credit.txt",ChoixEcriture.AUCUN,true);
+        new RequeteTexte("img/menu/chargement1.txt",ChoixEcriture.AUCUN,true);
+        new RequeteTexte("img/menu/chargement2.txt",ChoixEcriture.AUCUN,true);
+        new RequeteTexte("img/menu/chargement3.txt",ChoixEcriture.AUCUN,true);
+        new RequeteTexte("img/menu/chargement4.txt",ChoixEcriture.AUCUN,true);
+        new RequeteTexte("img/menu/chargement5.txt",ChoixEcriture.AUCUN,true);
         musique.arreter();
     }
 
