@@ -1,10 +1,11 @@
-package menu;
+package jeux;
 
 import affichage.*;
+import musique.GestionnaireMusique;
 
-public class Chargement{
+public class Chargement {
     
-    public static void LancementJeux() {
+    public static void lancementJeux() {
         GestionnaireMusique musique = new GestionnaireMusique("audio/bobine.wav");
         new RequeteTexte("img/menu/credit.txt",ChoixEcriture.AUCUN,true);
         new RequeteTexte("img/menu/chargement1.txt",ChoixEcriture.AUCUN,true);

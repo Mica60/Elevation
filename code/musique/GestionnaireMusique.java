@@ -1,4 +1,4 @@
-package affichage;
+package musique;
 
 import java.io.File;
 import javax.sound.sampled.*;

@@ -4,9 +4,16 @@ import java.io.*;
 
 public class TrieDecision {
     private int decision;
+    private int[] listeDecision;
 
-    public int boucleDecision(int[] listeDecision) throws IOException, InterruptedException {
+    public TrieDecision(int[] listeDecision) {
+        this.listeDecision = listeDecision;
+    }
+
+    public int boucleDecision() throws IOException, InterruptedException {
         boolean valide = false;
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while(!valide) {
             long debut = System.currentTimeMillis();
@@ -16,23 +23,23 @@ public class TrieDecision {
             if (br.ready()) {
                 this.decision = Integer.parseInt(br.readLine().trim());
             }
-            for(int idx = 0; idx < listeDecision.length; idx++) {
-                if(this.decision == listeDecision[idx]) {
+            for(int idx = 0; idx < this.listeDecision.length; idx++) {
+                if(this.decision == this.listeDecision[idx]) {
                     valide = true;
                 }
             }
             if(!valide) {
                 System.out.println("Décision invalide, vous ne pouvez que rentrer une de ses valeurs :");
-                listerDecision(listeDecision);
+                listerDecision();
             }
         }
         return this.decision;
     }
     
-    public void listerDecision(int[] listeDecision) {
+    public void listerDecision() {
         String texteRetour = "";
-        for(int idx = 0; idx < listeDecision.length; idx++ ) {
-            texteRetour += " " + listeDecision[idx];
+        for(int idx = 0; idx < this.listeDecision.length; idx++ ) {
+            texteRetour += " " + this.listeDecision[idx];
         }
         texteRetour += ".";
         System.out.println(texteRetour);

@@ -1,10 +1,11 @@
-import menu.Chargement;
+import jeux.*;
 
 public class main {
 
     public static void main(String[] args) {
 
-        Chargement.LancementJeux();
+        Chargement.lancementJeux();
+        Menu.lancementMenu();
         
     }
     
