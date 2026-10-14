@@ -50,7 +50,7 @@ public class MachineEcrire {
 
     public void utiliserUnePause() {
         try {
-            Thread.sleep(3500);
+            Thread.sleep(1000);
         } catch(InterruptedException e) {
             Thread.currentThread().interrupt();
         }

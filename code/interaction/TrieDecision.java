@@ -1,5 +1,6 @@
 package interaction;
 
+import affichage.AffichageRepetitif;
 import java.io.*;
 
 public class TrieDecision {
@@ -13,12 +14,14 @@ public class TrieDecision {
     public int boucleDecision() throws IOException, InterruptedException {
         boolean valide = false;
         boolean changement = false;
+        AffichageRepetitif AR = new AffichageRepetitif(new String[]{"img/menu/menu1ang.txt","img/menu/menu2ang.txt","img/menu/menu3ang.txt","img/menu/menu4ang.txt","img/menu/menu5ang.txt"},"audio/erreur");
         System.out.print("\033[H\033[2J");
         System.out.flush();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while(!valide) {
             long debut = System.currentTimeMillis();
             while (!br.ready() && System.currentTimeMillis() - debut < 5000) {
+                AR.afficherSuite();
                 Thread.sleep(100);
             }
             if (br.ready()) {
@@ -27,12 +30,12 @@ public class TrieDecision {
             }
             for(int idx = 0; idx < this.listeDecision.length; idx++) {
                 if(this.decision == this.listeDecision[idx]) {
+                    AR.setAffichageProposition(false);
                     valide = true;
                     changement = false;
                 }
-                if(changement) {
-                    System.out.println("Décision invalide, vous ne pouvez que rentrer une de ses valeurs :");
-                    listerDecision();
+                if(changement && !valide) {
+                    AR.setAffichageProposition(true);
                     changement = false;
                 }
             }
@@ -40,12 +43,12 @@ public class TrieDecision {
         return this.decision;
     }
     
-    public void listerDecision() {
+    public String listerDecision() {
         String texteRetour = "";
         for(int idx = 0; idx < this.listeDecision.length; idx++ ) {
             texteRetour += " " + this.listeDecision[idx];
         }
         texteRetour += ".";
-        System.out.println(texteRetour);
+        return texteRetour;
     }
 }

@@ -15,12 +15,6 @@ public class GestionnaireMusique {
         démarrer();
     }
 
-    public GestionnaireMusique(String chemin) {
-        this.route = chemin;
-        this.boucle = false;
-        démarrer();
-    }
-
     public void démarrer() {
         try{
             AudioInputStream audio=AudioSystem.getAudioInputStream(new File(route));
