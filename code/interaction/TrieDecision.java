@@ -14,7 +14,7 @@ public class TrieDecision {
     public int boucleDecision() throws IOException, InterruptedException {
         boolean valide = false;
         boolean changement = false;
-        AffichageRepetitif AR = new AffichageRepetitif(new String[]{"img/menu/menu1ang.txt","img/menu/menu2ang.txt","img/menu/menu3ang.txt","img/menu/menu4ang.txt","img/menu/menu5ang.txt"},"audio/erreur");
+        AffichageRepetitif AR = new AffichageRepetitif(new String[]{"ecran/menu/menu1ang.txt","ecran/menu/menu2ang.txt","ecran/menu/menu3ang.txt","ecran/menu/menu4ang.txt","ecran/menu/menu5ang.txt"},"audio/erreur.wav");
         System.out.print("\033[H\033[2J");
         System.out.flush();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -22,17 +22,16 @@ public class TrieDecision {
             long debut = System.currentTimeMillis();
             while (!br.ready() && System.currentTimeMillis() - debut < 5000) {
                 AR.afficherSuite();
-                Thread.sleep(100);
+                AR.setAffichageProposition(false);
+                Thread.sleep(250);
             }
             if (br.ready()) {
                 this.decision = Integer.parseInt(br.readLine().trim());
                 changement = true;
             }
             for(int idx = 0; idx < this.listeDecision.length; idx++) {
-                if(this.decision == this.listeDecision[idx]) {
-                    AR.setAffichageProposition(false);
+                if(this.decision == this.listeDecision[idx]) {       
                     valide = true;
-                    changement = false;
                 }
                 if(changement && !valide) {
                     AR.setAffichageProposition(true);
@@ -41,14 +40,5 @@ public class TrieDecision {
             }
         }
         return this.decision;
-    }
-    
-    public String listerDecision() {
-        String texteRetour = "";
-        for(int idx = 0; idx < this.listeDecision.length; idx++ ) {
-            texteRetour += " " + this.listeDecision[idx];
-        }
-        texteRetour += ".";
-        return texteRetour;
     }
 }

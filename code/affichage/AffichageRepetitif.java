@@ -23,6 +23,7 @@ public class AffichageRepetitif {
        new RequeteTexte(animation[compteur],ChoixEcriture.AUCUN,true);
        if(affichageProposition) {
           new GestionnaireMusique(this.route, false);
+          new RequeteTexte("ecran/outil/croix.txt",ChoixEcriture.AUCUN,true);
        }
        this.compteur += 1;
        if(this.compteur >= this.max) {
