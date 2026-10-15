@@ -1,0 +1,19 @@
+{
+"vmArgs": "--module-path C:/Users/camil/Documents/project jeu/javafx-sdk-28/lib/*.jar --add-modules javafx.controls,javafx.fxml",
+"configurations": [
+    {
+        "type": "java",
+        "name": "Main",
+        "request": "launch",
+        "mainClass": "Main",
+        "projectName": "project jeu_868aefa0"
+    },
+    {
+        "type": "java",
+        "name": "main",
+        "request": "launch",
+        "mainClass": "main",
+        "projectName": "project jeu_868aefa0"
+    }
+]
+}

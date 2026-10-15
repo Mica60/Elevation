@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 
     public void FaireAfficherImage() throws Exception {
         BufferedImage original = ImageIO.read(new File(this.lienImage));
-        int w = 50;
+        int w = 120;
         int h = original.getHeight() * w / original.getWidth();
         h -= h % 2;
         BufferedImage img = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);

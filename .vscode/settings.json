@@ -1,1 +1,6 @@
-{"java.project.sourcePaths": ["code"]}
+{
+"java.project.sourcePaths": ["code"],
+"java.project.referencedLibraries": {
+    "include": ["C:/Users/camil/Documents/project jeu/javafx-sdk-28/lib/*.jar"]
+    }       
+}

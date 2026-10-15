@@ -1,12 +1,7 @@
-import jeux.*;
+import javafx.application.Application;
 
-public class main {
-
-    public static void main(String[] args) throws Exception {
-
-        Chargement.lancementJeux();
-        Menu.lancementMenu();
-        
+public class Main {
+    public static void main(String[] args) {
+        Application.launch(Jeu.class, args);
     }
-    
 }
