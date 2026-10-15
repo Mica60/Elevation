@@ -12,7 +12,12 @@ import javax.imageio.ImageIO;
     }
 
     public void FaireAfficherImage() throws Exception {
-        BufferedImage img = ImageIO.read(new File(this.lienImage));
+        BufferedImage original = ImageIO.read(new File(this.lienImage));
+        int w = 50;
+        int h = original.getHeight() * w / original.getWidth();
+        h -= h % 2;
+        BufferedImage img = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+        img.getGraphics().drawImage(original.getScaledInstance(w, h, java.awt.Image.SCALE_SMOOTH), 0, 0, null);
         for (int y = 0; y < img.getHeight() - 1; y += 2) {
             StringBuilder sb = new StringBuilder();
             for (int x = 0; x < img.getWidth(); x++) {
