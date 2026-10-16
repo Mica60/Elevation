@@ -12,10 +12,10 @@ public class GestionnaireMusique {
     public GestionnaireMusique(String route, boolean boucle) {
         this.route = route;
         this.boucle = boucle;
-        démarrer();
+        demarrer();
     }
 
-    public void démarrer() {
+    public void demarrer() {
         try{
             AudioInputStream audio=AudioSystem.getAudioInputStream(new File(route));
             clip=AudioSystem.getClip();
